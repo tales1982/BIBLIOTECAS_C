@@ -39,28 +39,30 @@ int	ft_len(char *str)
 
 }
 
-int	ft_strcpm(char *str1, char *str2)
+
+int ft_strcpm(char *str1, char *str2) 
 {
 	int	i;
-	int	j;
 	
-	i = ft_len(str1);
-	j = ft_len(str2);
-	if(i > j )
+	i = 0;
+	while (str1[i] != '\0' && str2[i] != '\0')
 	{
-		printf("S1 MAIOR = %d",i);
-
+		if (str1[i] != str2[i])
+		{
+			printf("As strings são diferentes.\n");
+			return -1; // Retorna um valor indicando que as strings são diferentes
+		}
+	i++;
 	}
-	else if(i < j)
-	{
-		printf("S2 MAIOR= %d",j);
 
+	if (str1[i] == '\0' && str2[i] == '\0')
+	{
+		printf("As strings são iguais.\n");
+		return 0; // Retorna 0 indicando que as strings são iguais
 	}
 	else
 	{
-		printf("S1 = %d\nS2 = %d", i , j);
+		printf("As strings são de tamanhos diferentes.\n");
+		return 1; // Retorna um valor indicando que as strings têm tamanhos diferentes
 	}
-	i++;
-
-	return (str1 - str2);
 }
