@@ -17,13 +17,13 @@
 #include <stdio.h>
 
 int	ft_len(char *str);
-int	strcpm(char *str1, char *str2);
+int	ft_strcpm(char *str1, char *str2);
 
 int	main()
 {
 	char	s1[] = "Hello";
 	char	s2[] = "42 Luxembourg";
-	strcpm(s1,s2);
+	ft_strcpm(s1,s2);
 }
 
 int	ft_len(char *str)
@@ -39,7 +39,7 @@ int	ft_len(char *str)
 
 }
 
-int	strcpm(char *str1, char *str2)
+int	ft_strcpm(char *str1, char *str2)
 {
 	int	i;
 	int	j;
