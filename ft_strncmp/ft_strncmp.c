@@ -15,33 +15,29 @@ Essa função irá fazer a comparação, caractere a caractere, dos dois parâme
 */
  #include <stdio.h>
  
-int ft_strlen(char *srt);
-int ft_strncmp(char *s1, char *s2, unsigned int n);
 
-
-int main()
-{
-	char s1[] = "Hell";
-	char s2[] = "Hellkk";
-	
-	ft_strncmp(s1,s2,3);
+int ft_strncmp(char *s1, char *s2, unsigned int n) {
+    while (n > 0 && *s1 && (*s1 == *s2)) {
+        s1++;
+        s2++;
+        n--;
+    }
+    
+    if (n == 0) {  // Chegou ao final da comparação
+        return 0;
+    } else {
+        return *(unsigned char *)s1 - *(unsigned char *)s2;
+    }
 }
 
-int ft_strlen(char *str)
-{
-	int	i;
-	
-	i = 0;
-	while(str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
+int main() {
+    char s1[] = "Hello00";
+    char s2[] = "Helxlo0";
 
-int ft_strncmp(char *s1, char *s2, unsigned int n)
-{
-termina em casa
+    int result = ft_strncmp(s1, s2, 2);
+    printf("Resultado da strncmp: %d\n", result);
+
+    return 0;
 }
 
 
