@@ -14,7 +14,7 @@ são mais eficientes para grandes volumes de dados.
 #include <stdio.h>
 #define TAM 9
 
-void Bubble_sort(int *list, int size);
+void bubble_sort(int *list, int size);
 
 int	main(void)
 {
@@ -28,7 +28,7 @@ int	main(void)
 		printf("%d ",num[i]);
 		i++;
 	}
-	Bubble_sort(num,TAM);
+	bubble_sort(num,TAM);
 }
 
 void	swap(int *a, int *b)
@@ -40,7 +40,7 @@ void	swap(int *a, int *b)
 	*b = aux;
 }
 
-void	Bubble_sort(int *list, int size)
+void	bubble_sort(int *list, int size)
 {
 	int	i;
 	int	aux;
