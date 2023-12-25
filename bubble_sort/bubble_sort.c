@@ -13,72 +13,70 @@ são mais eficientes para grandes volumes de dados.
 
 #include <stdio.h>
 #define TAM 9
+
 void Bubble_sort(int *list, int size);
 
-int main(void)
+int	main(void)
 {
-    int num[TAM]= {8,9,1,4,5,3,7,6,2};
-    int i;
+	int	num[TAM]= {8,9,1,4,5,3,7,6,2};
+	int	i;
 
-     i = 0;
-     printf("Antes\n");
-     while(i < TAM)
-    {
-        printf("%d ",num[i]);
-        i++;
-    }
-
-    Bubble_sort(num,TAM);
+	i = 0;
+	printf("Antes\n");
+	while (i < TAM)
+	{
+		printf("%d ",num[i]);
+		i++;
+	}
+	Bubble_sort(num,TAM);
 }
 
-void swap(int *a, int *b)
+void	swap(int *a, int *b)
 {
-    int aux;
+	int	aux;
     
-    aux = *a;
-    *a = *b;
-    *b = aux;
+	aux = *a;
+	*a = *b;
+	*b = aux;
 }
 
-void Bubble_sort(int *list, int size)
+void	Bubble_sort(int *list, int size)
 {
-    int i;
-    int aux;
-    int flag;
-    int troca;
-    int interacao;
+	int	i;
+	int	aux;
+	int	flag;
+	int	troca;
+	int	interacao;
 
-    i = 0;
-    flag = 1;
-    troca = 0;
-    interacao = 0;
-    while (flag)
-    {
-        flag = 0;
-        i = 0;
-        while(i < size -1)
-        {
-            if(list[i] > list[i + 1])
-            {
-                swap(&list[i], &list[i + 1]);
-                flag = 1;
-                troca++;
-            }
-            interacao++;
-            i++;
-        }
-    }
+	i = 0;
+	flag = 1;
+	troca = 0;
+	interacao = 0;
+	while (flag)
+	{
+		flag = 0;
+		i = 0;
+		while(i < size -1)
+		{
+			if(list[i] > list[i + 1])
+			{
+				swap(&list[i], &list[i + 1]);
+				flag = 1;
+				troca++;
+			}
+			interacao++;
+			i++;
+		}
+	}
     
-     printf("\n\nDepois\n");
-    i = 0;
-     while(i < TAM)
-    {
-        printf("%d ",list[i]);
-        i++;
-    }
-    printf("\n");
-    printf("\nTrocas feitas %d\n",troca);
-    printf("Interaçoes feitas %d\n",interacao);
-    
-
+	printf("\n\nDepois\n");
+	i = 0;
+	while (i < TAM)
+	{
+		printf("%d ",list[i]);
+		i++;
+	}
+	printf("\n");
+	printf("\nTrocas feitas %d\n",troca);
+	printf("Interaçoes feitas %d\n",interacao);
 }
