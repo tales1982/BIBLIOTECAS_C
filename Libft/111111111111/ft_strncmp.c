@@ -1,48 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tlima-de <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/20 18:05:22 by tlima-de          #+#    #+#             */
-/*   Updated: 2024/02/20 18:06:21 by tlima-de         ###   ########.fr       */
+/*   Created: 2024/02/23 20:11:07 by tlima-de          #+#    #+#             */
+/*   Updated: 2024/02/23 20:11:12 by tlima-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int	result;
-	int	sign;
-	int	i;
+	unsigned int	i;
 
-	result = 0;
-	sign = 1;
 	i = 0;
-	while (ft_isspace(str[i]))
-		i++;
-	if (str[i] == '+' && str[i + 1] != '-')
-		i++;
-	if (str[i] == '-')
-	{
-		sign = -1;
-		i++;
-	}
-	while (str[i] && str[i] >= 48 && str[i] <= 57)
-	{
-		result *= 10;
-		result += str[i] - 48;
-		i++;
-	}
-	result *= sign;
-	return (result);
-}
-
-int	ft_isspace(int c)
-{
-	if (c == 9 || c == 10 || c == 11 || c == 12 || c == 13 || c == 32)
+	if (!s1 || !s2)
 		return (1);
+	while ((s1[i] || s2[i]) && i < n)
+	{
+		if ((unsigned char) s1[i] != (unsigned char) s2[i])
+			return ((unsigned char) s1[i] - (unsigned char) s2[i]);
+		i++;
+	}
 	return (0);
 }

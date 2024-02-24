@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tlima-de <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/20 18:12:52 by tlima-de          #+#    #+#             */
-/*   Updated: 2024/02/20 18:13:00 by tlima-de         ###   ########.fr       */
+/*   Created: 2024/02/23 18:04:40 by tlima-de          #+#    #+#             */
+/*   Updated: 2024/02/23 18:05:46 by tlima-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_str_is_lowercase(char *str)
 {
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	while (*str)
+	{
+		if (!(*str >= 'a' && *str <= 'z'))
+		{
+			return (0);
+		}
+		str++;
+	}
+	return (1);
 }

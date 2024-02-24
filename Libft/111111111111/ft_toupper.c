@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tlima-de <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/20 18:12:52 by tlima-de          #+#    #+#             */
-/*   Updated: 2024/02/20 18:13:00 by tlima-de         ###   ########.fr       */
+/*   Created: 2024/02/23 18:02:04 by tlima-de          #+#    #+#             */
+/*   Updated: 2024/02/23 18:02:17 by tlima-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_str_is_uppercase(char *str)
 {
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	while (*str)
+	{
+		if (!(*str >= 'A' && *str <= 'Z'))
+		{
+			return (0);
+		}
+		str++;
+	}
+	return (1);
 }
