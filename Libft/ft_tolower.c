@@ -11,15 +11,9 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ft_str_is_lowercase(char *str)
+int	ft_tolower(int i)
 {
-	while (*str)
-	{
-		if (!(*str >= 'a' && *str <= 'z'))
-		{
-			return (0);
-		}
-		str++;
-	}
-	return (1);
+	if (i >= 'A' && i <= 'Z')
+		return (i + 32);
+	return (i);
 }

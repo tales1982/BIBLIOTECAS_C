@@ -11,15 +11,9 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ft_str_is_uppercase(char *str)
+int	ft_toupper(int i)
 {
-	while (*str)
-	{
-		if (!(*str >= 'A' && *str <= 'Z'))
-		{
-			return (0);
-		}
-		str++;
-	}
-	return (1);
+	if (i >= 'a' && i <= 'z')
+		return (i - 32);
+	return (i);
 }
