@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: tlima-de <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/02/26 17:36:37 by tlima-de          #+#    #+#              #
+#    Updated: 2024/02/26 17:36:46 by tlima-de         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 SRC = 	ft_atoi.c \
 	ft_bzero.c \
 	ft_calloc.c \
@@ -20,7 +32,9 @@ SRC = 	ft_atoi.c \
 	ft_strnstr.c \
 	ft_strrchr.c \
 	ft_tolower.c \
-	ft_toupper.c
+	ft_toupper.c \
+	ft_substrc.c \
+	main.c
 	
 NAME	=	libft.a
 OBJS	=	${SRC:.c=.o}
@@ -44,3 +58,6 @@ fclean:	clean
 				@ ${RM} ${NAME}
 
 re:			fclean all
+
+main: ${NAME} main.c
+	@ ${CC} ${CFLAGS} -o $@ main.c ${NAME}

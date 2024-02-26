@@ -1,20 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tlima-de <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/25 14:14:36 by tlima-de          #+#    #+#             */
+/*   Updated: 2024/02/25 14:14:54 by tlima-de         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	size_t	b;
-	void	*p;
-
-	if (count == 0 || size == 0)
-	{
-		count = 1;
-		size = 1;
-	}
-	b = count * size;
-	p = malloc(b);
-	if (p == NULL)
+	void	*array;
+	
+	if(nmemb && size && nmemb > (4294967295 / size))
+		return(NULL);
+	array = (void *)malloc(nmemb * size);
+	if (array == NULL)
 		return (NULL);
-	else
-		ft_bzero(p, b);
-	return (p);
+	ft_bzero(array, (nmemb * size));
+	return (array);
 }
+
