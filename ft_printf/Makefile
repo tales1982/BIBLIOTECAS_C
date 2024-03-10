@@ -29,16 +29,16 @@ OBJS = $(SRCS:.c=.o)
 all: $(NAME)
 
 makelibft:
-	@make -C $(LIBFTDIR)
+	@make -C $(LIBFTDIR) 
 	@cp $(LIBFTDIR)/$(LIBFTNAME) .
-	@mv $(LIBFTNAME) $(NAME)
+	@mv $(LIBFTNAME) $(NAME) 
 
-$(NAME): makelibft $(OBJS)
-	@ar -r $(NAME) $(OBJS)
+$(NAME): makelibft $(OBJS) 
+	@ar -r $(NAME) $(OBJS) 
 
 clean:
 	@rm -f $(OBJS)
-	@cd $(LIBFTDIR) && make clean
+	@cd $(LIBFTDIR) && make clean 
 	
 fclean: clean
 	@rm -f $(NAME)
