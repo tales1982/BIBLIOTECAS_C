@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   print_string.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tlima-de <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/25 14:17:17 by tlima-de          #+#    #+#             */
-/*   Updated: 2024/02/25 14:17:23 by tlima-de         ###   ########.fr       */
+/*   Created: 2024/03/10 15:38:10 by tlima-de          #+#    #+#             */
+/*   Updated: 2024/03/10 15:38:27 by tlima-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int	print_string(char *s)
 {
-	char	*str;
-	size_t	i;
+	unsigned int	i;
 
 	i = 0;
-	str = (char *)s;
-	while (i < n)
-	{
-		if ((unsigned char)str[i] == (unsigned char)c)
-			return ((char *)s + i);
-		i++;
-	}
-	return (NULL);
+	if (!s)
+    {
+        write(1, "(null)", 6);
+        return 6;
+    }
+	while (s[i] != '\0')
+    {
+        i++;
+    }
+    write(1, s, i);
+	return (i);
 }

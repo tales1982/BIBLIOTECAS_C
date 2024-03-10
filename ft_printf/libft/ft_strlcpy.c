@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tlima-de <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/25 14:17:17 by tlima-de          #+#    #+#             */
-/*   Updated: 2024/02/25 14:17:23 by tlima-de         ###   ########.fr       */
+/*   Created: 2024/02/23 17:42:30 by tlima-de          #+#    #+#             */
+/*   Updated: 2024/02/23 17:43:20 by tlima-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	char	*str;
-	size_t	i;
+	size_t	src_len;
 
-	i = 0;
-	str = (char *)s;
-	while (i < n)
+	src_len = ft_strlen(src);
+	if (src_len + 1 < dstsize)
+		ft_memcpy(dst, src, src_len + 1);
+	else if (dstsize != 0)
 	{
-		if ((unsigned char)str[i] == (unsigned char)c)
-			return ((char *)s + i);
-		i++;
+		ft_memcpy(dst, src, dstsize - 1);
+		dst[dstsize - 1] = 0;
 	}
-	return (NULL);
+	return (src_len);
 }
