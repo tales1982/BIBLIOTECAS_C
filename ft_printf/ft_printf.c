@@ -38,8 +38,9 @@ static int	check_type(const char input, va_list args)
 int	ft_printf(const char *input, ...)
 {
     va_list args;
-    unsigned int i = 0;
-
+    unsigned int    i;
+    
+    i = 0;
     va_start(args, input);
     while (*input != '\0')
     {
