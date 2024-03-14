@@ -1,7 +1,8 @@
 SRC = ft_print_menu.c \
       ft_strcmp.c \
       ft_strcpy.c \
-	  apagarCliente
+	  apagarCliente \
+	  imprimirCliente.c
 
 NAME    = libft.a
 OBJS    = $(SRC:.c=.o)

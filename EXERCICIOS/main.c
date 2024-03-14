@@ -68,17 +68,18 @@ int main()
             apagarCliente(clientes, findClient);
     
         }
+        else if(menu == 3)
+            imprimirClientes(clientes, i); 
+        else 
+            printf("Digite um valor valido de 1 a 4.\n");
+        
         ft_print_menu();
         scanf("%i", &menu);
+        printf("\nPrograma finalizado.......\n");
         printf("\n");
         
     }
 
-    while (j < i)
-    {
-        printf("°%i cliente..: %s\n", j + 1, clientes[j].nomeClient);
-        j++;
-    }
 
     free(client);
     return 0;

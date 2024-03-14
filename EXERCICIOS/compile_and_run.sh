@@ -7,7 +7,7 @@ COMPILER=cc
 OUTPUT=out
 
 # Lista de arquivos de código-fonte
-SOURCE_FILES="main.c ft_strcpy.c ft_strcmp.c ft_print_menu.c apagarCliente.c"
+SOURCE_FILES="main.c ft_strcpy.c ft_strcmp.c ft_print_menu.c apagarCliente.c imprimirClient.c"
 
 # Comando de compilação
 $COMPILER $SOURCE_FILES -o $OUTPUT

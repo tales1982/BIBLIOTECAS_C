@@ -15,6 +15,7 @@ typedef struct {
 int ft_strcmp(const char *s1, const char *s2);
 char *ft_strcpy(char *dest, const char *src);
 void apagarCliente(Cliente clientes[], const char *findClient);
+void imprimirClientes(Cliente clientes[],int totalClientes);
 void ft_print_menu();
 
 //******** CONSTANTS AND MACROS ************ 
