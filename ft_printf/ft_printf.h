@@ -12,8 +12,8 @@
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include <stdarg.h>
 # include "./libft/libft.h"
+# include <stdarg.h>
 
 int	ft_printf(const char *input, ...);
 int	print_pointer(unsigned long value, int asc);

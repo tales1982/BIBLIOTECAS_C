@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_unsigned.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tlima-de <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tlima-de <tlima-de@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 16:03:30 by tlima-de          #+#    #+#             */
-/*   Updated: 2024/03/10 16:03:44 by tlima-de         ###   ########.fr       */
+/*   Updated: 2024/03/13 18:55:52 by tlima-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,3 @@ int	print_unsigned(unsigned int nb)
 	}
 	return (i);
 }
-//ft_putchar_fd(nb + 48, 1); 
-// Converte o número para o caractere correspondente e imprime.
-//ft_putchar_fd((nb % 10) + 48, 1); 
-// Imprime o último dígito do número.

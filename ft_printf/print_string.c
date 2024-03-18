@@ -18,14 +18,14 @@ int	print_string(char *s)
 
 	i = 0;
 	if (!s)
-    {
-        write(1, "(null)", 6);
-        return 6;
-    }
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
 	while (s[i] != '\0')
-    {
-        i++;
-    }
-    write(1, s, i);
+	{
+		i++;
+	}
+	write(1, s, i);
 	return (i);
 }
