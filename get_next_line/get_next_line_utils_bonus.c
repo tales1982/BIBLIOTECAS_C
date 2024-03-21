@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tlima-de <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/21 18:54:39 by tlima-de          #+#    #+#             */
-/*   Updated: 2024/03/21 18:54:42 by tlima-de         ###   ########.fr       */
+/*   Created: 2024/03/21 18:54:51 by tlima-de          #+#    #+#             */
+/*   Updated: 2024/03/21 18:54:55 by tlima-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 size_t	ft_strlen(const char *str)
 {
@@ -49,10 +49,10 @@ char	*ft_strchr(const char *s, int c)
 	while (*s)
 	{
 		if (*s == c)
-			return ((char *)s);
+			return ((char *) s);
 		s++;
 	}
 	if (*s == c)
-		return ((char *)s);
+		return ((char *) s);
 	return (NULL);
 }

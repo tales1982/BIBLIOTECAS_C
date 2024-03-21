@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tlima-de <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/21 18:53:54 by tlima-de          #+#    #+#             */
-/*   Updated: 2024/03/21 18:53:57 by tlima-de         ###   ########.fr       */
+/*   Created: 2024/03/21 18:54:26 by tlima-de          #+#    #+#             */
+/*   Updated: 2024/03/21 18:54:28 by tlima-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 static char	*ft_read(int int_fd, char *full_line)
 {
@@ -95,20 +95,20 @@ static char	*ft_keep_rest(char *full_line)
 
 char	*get_next_line(int fd)
 {
-	static char *full_line;
-	char *line_2b_printed;
+	static char	*full_line[MAX_FD];
+	char		*line_2b_printed;
 
 	line_2b_printed = "";
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
+	if (fd < 0 || fd >= MAX_FD || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
 		return (NULL);
-	full_line = ft_read(fd, full_line);
-	if (!*full_line)
+	full_line[fd] = ft_read(fd, full_line[fd]);
+	if (!*full_line[fd])
 	{
-		free(full_line);
-		full_line = NULL;
-		return (full_line);
+		free(full_line[fd]);
+		full_line[fd] = NULL;
+		return (NULL);
 	}
-	line_2b_printed = ft_return_line(full_line);
-	full_line = ft_keep_rest(full_line);
+	line_2b_printed = ft_return_line(full_line[fd]);
+	full_line[fd] = ft_keep_rest(full_line[fd]);
 	return (line_2b_printed);
 }
