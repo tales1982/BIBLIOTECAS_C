@@ -10,31 +10,39 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include<unistd.h>
 
-void	ft_putchar(char c)
+void ft_putchar(char s)
 {
-	write(1, &c, 1);
+	write(1, &s , 1);
 }
 
-int		main(int ac, char **av)
-{
-	int		index;
 
-	index = 0;
-	if (ac == 2)
+int	main(int ac, char **av)
+{
+	int	j;
+	char	aux;
+	
+	j = 0;
+	if(ac == 2)
 	{
-		while (av[1][index] != '\0')
+		while(av[1][j] != '\0')
 		{
-			if (av[1][index] >= 'A' && av[1][index] <= 'Z')
-				ft_putchar(av[1][index] - 'A' + 'a');
-			else if (av[1][index] >= 'a' && av[1][index] <= 'z')
-				ft_putchar(av[1][index] - 'a' + 'A');
+			if(av[1][j] >= 'a' && av[1][j] <= 'z')
+			{
+				ft_putchar(av[1][j] - 'a' + 'A' );
+			}	
+			else if(av[1][j] >= 'A' && av[1][j] <= 'Z')
+			{
+				ft_putchar(av[1][j] - 'A' + 'a' );
+			}
 			else
-				ft_putchar(av[1][index]);
-			index++;
+				ft_putchar(av[1][j]);
+			j++;
 		}
+		
 	}
-	ft_putchar('\n');
-	return (0);
+	write(1, "\n", 1);
+	
+	return 0;
 }
