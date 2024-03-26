@@ -62,7 +62,7 @@ int	main( int argc, char *argv[ ] )
 	if (argc != 4)
 	{ 
 		write(1, "\n", 1); // Inclui quebra de linha para clareza
-		return 1; // Encerra o programa após exibir a mensagem de erro
+		return 1; 
 	}
 	int	imputA;
 	int	imputB;
