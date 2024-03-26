@@ -1,2 +1,0 @@
-# BIBLIOTECAS_C
-
