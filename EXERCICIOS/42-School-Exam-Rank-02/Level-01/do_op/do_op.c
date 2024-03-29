@@ -1,14 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ######.c                                           :+:      :+:    :+:   */
+/*   do_op.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tlima-de <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tales <tales@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 16:19:19 by tlima-d           #+#    #+#             */
-/*   Updated: 2024/03/15 16:58:31 by tlima-de         ###   ########.fr       */
+/*   Updated: 2024/03/29 22:10:54 by tales            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 /*
  Escreva um programa que receba três strings:
 - O primeiro e o terceiro são representações de inteiros assinados de base 10
@@ -35,11 +36,8 @@ int	ft_atoi(char *str)
 	res = 0;
 	sign = 1;
 	i = 0;
-	if(str[i] == '\t' || str[i] == '\n' || str[i] == 'v' ||
-		str[i] == 'f' || str[i] == 'r' || str[i] == ' ')
-	{
-		i++;
-	}
+	while (*str == ' ' || (*str >= 9 && *str <= 13))
+        	str++;
 	if(str[i] == '-' || str[i] == '+')
 	{
 		if(str[i] == '-')
