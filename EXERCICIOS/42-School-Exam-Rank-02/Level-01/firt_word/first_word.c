@@ -26,3 +26,20 @@ $> ./first_word "  lorem,ipsum  " | cat -e
 lorem,ipsum$
 $>
 */
+#include<unistd.h>
+
+void ft_putchar(char s)
+{
+    write(1, &s, 1);
+}
+void first_word(char *str)
+{
+
+    ft_putchar(&str[0]);
+}
+
+int main(int ac, int **av)
+{
+
+}
+
