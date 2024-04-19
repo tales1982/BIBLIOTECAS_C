@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Defina o compilador, por exemplo: gcc ou cc
-COMPILER=cc
+COMPILER=gcc
 
 # Defina o nome do arquivo de saída
 OUTPUT=out
@@ -14,8 +14,8 @@ $COMPILER $SOURCE_FILES -o $OUTPUT
 
 # Verifica se a compilação foi bem-sucedida
 if [ $? -eq 0 ]; then
-    echo "Compilação bem-sucedida. Executando $OUTPUT..."
+      echo -e "\e[32mCompilação bem sucedida!\e[0m"
     ./$OUTPUT
 else
-    echo "A compilação falhou."
+    echo -e "\e[31m$output\e[0m"
 fi
