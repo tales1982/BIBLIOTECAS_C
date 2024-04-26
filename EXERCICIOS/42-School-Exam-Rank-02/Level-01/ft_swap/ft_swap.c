@@ -1,49 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ulstr.c                                            :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tales <tales@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 16:19:19 by tales             #+#    #+#             */
-/*   Updated: 2024/04/15 20:56:39 by tales            ###   ########.fr       */
+/*   Updated: 2024/04/15 20:56:19 by tales            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include<stdio.h>
 
-#include<unistd.h>
-
-void ft_putchar(char s)
+void	ft_swap(int *a, int *b)
 {
-	write(1, &s , 1);
+	int aux;
+	
+	aux = *a;
+	*a = *b;
+	*b = aux; 
 }
-
-
-int	main(int ac, char **av)
+/*
+int main(void)
 {
-	int	j;
-	char	aux;
+	int a;
+	int b;
 	
-	j = 0;
-	if(ac == 2)
-	{
-		while(av[1][j] != '\0')
-		{
-			if(av[1][j] >= 'a' && av[1][j] <= 'z')
-			{
-				ft_putchar(av[1][j] - 'a' + 'A' );
-			}	
-			else if(av[1][j] >= 'A' && av[1][j] <= 'Z')
-			{
-				ft_putchar(av[1][j] - 'A' + 'a' );
-			}
-			else
-				ft_putchar(av[1][j]);
-			j++;
-		}
-		
-	}
-	write(1, "\n", 1);
-	
-	return 0;
+	a = 10;
+	b = 20;
+	printf("Valor original..: A = %d, B = %d\n", a, b);
+	ft_swap(&a ,&b);
+	printf("Valor Copia..: A = %d, B = %d\n", a, b);
+	return(0);
 }
+*/

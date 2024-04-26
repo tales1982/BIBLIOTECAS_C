@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   first_word.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tales <tales@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/15 16:19:19 by tales             #+#    #+#             */
+/*   Updated: 2024/04/15 20:55:56 by tales            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 /*
 Assignment name  : first_word
 Expected files   : first_word.c
@@ -34,12 +46,30 @@ void ft_putchar(char s)
 }
 void first_word(char *str)
 {
+    int i;
 
-    ft_putchar(&str[0]);
+    i = 0;
+    while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+    {
+        i++;
+    }
+    while (str[i] != ' ' && str[i] != '\0' && !(str[i] >= 9 && str[i] <= 13))
+    {
+        ft_putchar(str[i]);
+        i++;
+    }
+ 
+       
 }
 
-int main(int ac, int **av)
+int main(int argc, char **argv)
 {
+    if (argc == 2) // Verifica se um argumento (além do nome do programa) foi passado
+    {
+        first_word(argv[1]);
+    }
+    ft_putchar('\n'); // Imprime uma nova linha em qualquer caso
 
+    return 0;
 }
 
